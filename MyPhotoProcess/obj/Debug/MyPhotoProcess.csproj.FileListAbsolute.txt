@@ -1,0 +1,5 @@
+C:\Users\Danny\Desktop\MyPhotoProcess\MyPhotoProcess\obj\Debug\MyPhotoProcess.csprojResolveAssemblyReference.cache
+C:\Users\Danny\Desktop\MyPhotoProcess\MyPhotoProcess\bin\MyPhotoProcess.dll
+C:\Users\Danny\Desktop\MyPhotoProcess\MyPhotoProcess\bin\MyPhotoProcess.pdb
+C:\Users\Danny\Desktop\MyPhotoProcess\MyPhotoProcess\obj\Debug\MyPhotoProcess.dll
+C:\Users\Danny\Desktop\MyPhotoProcess\MyPhotoProcess\obj\Debug\MyPhotoProcess.pdb

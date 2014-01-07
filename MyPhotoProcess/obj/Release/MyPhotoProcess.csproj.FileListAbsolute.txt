@@ -1,0 +1,4 @@
+C:\Users\Danny\Desktop\MyPhotoProcess\MyPhotoProcess\bin\MyPhotoProcess.dll
+C:\Users\Danny\Desktop\MyPhotoProcess\MyPhotoProcess\bin\MyPhotoProcess.pdb
+C:\Users\Danny\Desktop\MyPhotoProcess\MyPhotoProcess\obj\Release\MyPhotoProcess.dll
+C:\Users\Danny\Desktop\MyPhotoProcess\MyPhotoProcess\obj\Release\MyPhotoProcess.pdb

@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>旋转木马的照片缩放器</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .title {
+            font-weight: bold;
+        }
+
+        .bar {
+            width: 400px;
+            height: 30px;
+            border: solid 1px #000;
+            padding: 1px;
+        }
+
+        .innerBar {
+            background-color: #0a57f5;
+            width: 0%;
+            height: 30px;
+        }
+
+        #processBar {
+            float: left;
+            margin-left: 150px;
+            margin-top: 4px;
+        }
+
+        .processTxt {
+            line-height: 40px;
+            margin-left: 10px;
+        }
+
+        .pProcess {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#">旋转木马的照片缩放器</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="http://weibo.com/wudixiaojue" target="_blank">@旋转木马</a></li>
+                        <!--<li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li class="nav-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>-->
+                    </ul>
+                    <form class="navbar-form pull-right">
+                        <!--<input class="span2" type="text" placeholder="Email">
+                        <input class="span2" type="password" placeholder="Password">
+                        <button type="submit" class="btn">Sign in</button>-->
+                    </form>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Main hero unit for a primary marketing message or call to action -->
+        <div class="hero-unit">
+            <h1>Hi, Photographs!</h1>
+            <p style="margin-top: 10px; margin-bottom: 20px; font-size: 20px;">
+                你还在为用单反拍回来的照片文件太大而发愁吗？你还在为自己的硬盘容量而担心吗？试试旋转木马的照片缩放器吧，它能让你用最简单的方式批量完成照片的缩放，而不用去光影魔术手或者美图秀秀之类的软件
+                进行复杂的操作，只需点几下鼠标，剩下的事情就交给它吧！
+            </p>
+            <p>
+                <p class="title">选择要缩放的最长边像素：</p>
+                <p>
+                    <select id="ddl_value" runat="server">
+                        <option value="800">800px</option>
+                        <option value="1024">1024px</option>
+                        <option value="2048">2048px</option>
+                    </select>
+                </p>
+                <p class="title">输入要处理的照片目录：如 C:\MyPhotos</p>
+                <p>
+                    <input id="txtFile" type="text" />
+                </p>
+
+                <div style="height: 50px;">
+                    <div style="float: left"><a id="btn_process" href="#" class="btn btn-primary btn-large">缩放我的照片 ^_^</a> </div>
+                    <div id="processBar" class="pProcess">
+                        <div class="bar">
+                            <div class="innerBar"></div>
+                        </div>
+                    </div>
+                    <div style="float: left" class="processTxt pProcess"><span id="spProcessTxt">Loading...</span> </div>
+
+                </div>
+            </p>
+        </div>
+
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="span4">
+                <h2>灵感</h2>
+                <p>每一份灵感都来源于对生活的感悟和对技术的执着。</p>
+                <!--<p><a class="btn" href="#">View details &raquo;</a></p>-->
+            </div>
+            <div class="span4">
+                <h2>创意</h2>
+                <p>有想法，就去做。尽管简单，做出来就是非同凡响。</p>
+                <!--<p><a class="btn" href="#">View details &raquo;</a></p>-->
+            </div>
+            <div class="span4">
+                <h2>实用</h2>
+                <p>让知识为生活服务，方便自己，方便大家。</p>
+                <!--<p><a class="btn" href="#">View details &raquo;</a></p>-->
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; DannyWang 2013 </p>
+        </footer>
+
+    </div>
+    <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="Scripts/jquery-1.7.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="Scripts/photoprocess.js"></script>
+</body>
+</html>
