@@ -1,10 +1,25 @@
-﻿$(function () {
+﻿/*前台处理程序
+ *Update:2014-01-07
+ *处理进度条不准确问题，输入验证问题
+ *
+*/
+String.prototype.Trim = function () {
+    return this.replace(/(^\s*)|(\s*$)/g, "");
+};
+
+$(function () {
     var result = [];
     $("#btn_process").click(function () {
         $("#btn_process").attr("disabled", "disabled");
         initBar();
-        var txt = $("#txtFile").val();
+        var txt = $("#txtFile").val().Trim();
         var value = $("#ddl_value").val();
+        //check input
+        if (txt=='') {
+            alert('请输入处理图片的路径。');
+            $("#btn_process").removeAttr("disabled");
+            return false;
+        }
         $(".pProcess").show();
         $.post("process.ashx?t=" + new Date(), { txt: txt, value: value, type: "process" }, function (data) {
 
@@ -23,6 +38,7 @@
             clearInterval(timer);
             $("#btn_process").removeAttr("disabled");
         });
+        result = [];
         var timer = setInterval(getPresent, 500);
     });
 
@@ -44,3 +60,4 @@
         $("#spProcessTxt").html("");
     }
 });
+

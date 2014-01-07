@@ -25,7 +25,7 @@ namespace MyPhotoProcess
             {
                 string fileURL = context.Request.Form["txt"].ToString();
                 int maxWidthHeight = int.Parse(context.Request.Form["value"].ToString());
-
+                
                 var result = ProcessFile(fileURL, maxWidthHeight);
                 string json = JsonSerialize(result);
                 context.Response.Write(json);
@@ -98,7 +98,7 @@ namespace MyPhotoProcess
                 string isOverwrite = System.Configuration.ConfigurationManager.AppSettings["isOverwrite"].ToString();
 
                 var list = GetPhotoList(dir);
-
+                present = 0m;
                 for (int i = 0; i < list.Count; i++)
                 {
                     ResultInfo re = new ResultInfo();
