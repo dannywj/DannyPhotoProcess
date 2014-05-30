@@ -99,6 +99,12 @@ namespace MyPhotoProcess
 
                 var list = GetPhotoList(dir);
                 present = 0m;
+                if (list.Count==0)
+                {
+                    result.Base.ErrorCode = 101;
+                    result.Base.ErrorMessage = "不存在要处理的照片";
+                    return result;
+                }
                 for (int i = 0; i < list.Count; i++)
                 {
                     ResultInfo re = new ResultInfo();

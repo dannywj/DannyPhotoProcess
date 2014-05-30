@@ -7,10 +7,26 @@ String.prototype.Trim = function () {
     return this.replace(/(^\s*)|(\s*$)/g, "");
 };
 
+jQuery.fn.clickOnce = function (callback) {
+    this.unbind('click');
+    this.click(function () {
+        callback();
+    });
+};
+
 $(function () {
     var result = [];
-    $("#btn_process").click(function () {
+    var gTxtBtnInit = '缩放我的照片 ^_^';
+    var gTxtBtnProcessing = '处理中，请稍候..';
+    $("#btn_process").clickOnce(function () {
+
+        //var ttttt=window.clipboardData.getData("Text");
+        //alert(ttttt);
+        //return false;
+
+
         $("#btn_process").attr("disabled", "disabled");
+        $("#btn_process").html(gTxtBtnProcessing);
         initBar();
         var txt = $("#txtFile").val().Trim();
         var value = $("#ddl_value").val();
@@ -18,6 +34,7 @@ $(function () {
         if (txt=='') {
             alert('请输入处理图片的路径。');
             $("#btn_process").removeAttr("disabled");
+            $("#btn_process").html(gTxtBtnInit);
             return false;
         }
         $(".pProcess").show();
@@ -28,6 +45,7 @@ $(function () {
                 $(".pProcess").hide();
                 clearInterval(timer);
                 $("#btn_process").removeAttr("disabled");
+                $("#btn_process").html(gTxtBtnInit);
                 alert('出错啦！ ErrorCode：' + pResult.Base.ErrorCode + " ErrorMessage:" + pResult.Base.ErrorMessage);
                 return false;
             }
@@ -37,6 +55,8 @@ $(function () {
             $("#spProcessTxt").html("Finished!");
             clearInterval(timer);
             $("#btn_process").removeAttr("disabled");
+            $("#btn_process").html(gTxtBtnInit);
+            $("#txtFile").val('');
         });
         result = [];
         var timer = setInterval(getPresent, 500);

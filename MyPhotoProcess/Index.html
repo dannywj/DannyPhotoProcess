@@ -8,7 +8,9 @@
         .title {
             font-weight: bold;
         }
-
+        .tbl_td {
+         width:280px;
+        }
         .bar {
             width: 400px;
             height: 30px;
@@ -87,21 +89,33 @@
                 进行复杂的操作，只需点几下鼠标，剩下的事情就交给它吧！
             </p>
             <p>
-                <p class="title">选择要缩放的最长边像素：</p>
-                <p>
-                    <select id="ddl_value" runat="server">
-                        <option value="800">800px</option>
-                        <option value="1024">1024px</option>
-                        <option value="2048">2048px</option>
-                    </select>
-                </p>
+                <table>
+                    <tr>
+                        <td class="title tbl_td">选择要缩放的最长边像素：</td>
+                        <td class="title tbl_td">是否缩放子文件夹：</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="ddl_value">
+                                <option value="800">800px</option>
+                                <option value="1024">1024px</option>
+                                <option value="2048">2048px</option>
+                            </select></td>
+                        <td>
+                            <select id="ddl_processChildFoder">
+                                <option value="true">是</option>
+                                <option value="false">否</option>
+                            </select></td>
+                    </tr>
+                </table>
+
                 <p class="title">输入要处理的照片目录：如 C:\MyPhotos</p>
                 <p>
-                    <input id="txtFile" type="text" />
+                    <input id="txtFile" type="text" value="F:\AAA\22" />
                 </p>
 
                 <div style="height: 50px;">
-                    <div style="float: left"><a id="btn_process" href="#" class="btn btn-primary btn-large">缩放我的照片 ^_^</a> </div>
+                    <div style="float: left"><a id="btn_process" href="javascript:void(0)" class="btn btn-primary btn-large">缩放我的照片 ^_^</a> </div>
                     <div id="processBar" class="pProcess">
                         <div class="bar">
                             <div class="innerBar"></div>
@@ -135,7 +149,7 @@
         <hr>
 
         <footer>
-            <p>&copy; DannyWang 2013 </p>
+            <p>&copy; DannyWang 2013-2014 </p>
         </footer>
 
     </div>
